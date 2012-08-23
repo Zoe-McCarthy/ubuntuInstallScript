@@ -1,6 +1,12 @@
 #!/bin/bash
 #random packages that are useful
 sudo apt-get install vim git vim-gtk rake exuberant-ctags ipython mercurial libopenscenegraph-dev cmake-curses-gui python-networkx
+
+#vimrc/bashrc setup
+cd ~/
+git clone https://github.com/Zoe-McCarthy/dotfiles.git
+~/dotfiles/install.sh
+
 #ROS stuff
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
