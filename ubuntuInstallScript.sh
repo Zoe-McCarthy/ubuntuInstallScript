@@ -9,16 +9,22 @@ git clone https://github.com/Zoe-McCarthy/dotfiles.git
 
 #ROS stuff
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/drc/ubuntu precise main" > /etc/apt/sources.list.d/drc-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+wget http://packages.osrfoundation.org/drc.key -O - | sudo apt-key add -
 sudo apt-get update
 echo "hddtemp hddtemp/daemon boolean false" | sudo debconf-set-selections
-sudo apt-get install ros-fuerte-pr2-desktop
-echo "source /opt/ros/fuerte/setup.bash" >> ~/.bashrc
-. ~/.bashrc
+sudo apt-get install ros-groovy-desktop-full
 sudo easy_install -U rosdep rospkg
-sudo apt-get install ros-fuerte-openni-camera ros-fuerte-openni-launch
+sudo rosdep init
+rosdep update
+echo "source /opt/ros/groovy/setup.bash" >> ~/.bashrc
+. ~/.bashrc
+sudo apt-get install python-rosinstall
+
+#sudo apt-get install ros-fuerte-openni-camera ros-fuerte-openni-launch
 
 #OpenRAVE stuff
-sudo add-apt-repository ppa:openrave/release
-sudo apt-get update
-sudo apt-get install openrave0.6-dp-dev openrave0.6-dp-plugins-all
+#sudo add-apt-repository ppa:openrave/release
+#sudo apt-get update
+#sudo apt-get install openrave0.6-dp-dev openrave0.6-dp-plugins-all
