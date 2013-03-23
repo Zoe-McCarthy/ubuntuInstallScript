@@ -1,8 +1,4 @@
 #!/bin/bash
-cd ~/Downloads
-wget us.download.nvidia.com/XFree86/Linux-x86_64/310.40/NVIDIA-Linux-x86_64-310.40.run
-
-./NVIDIA-Linux-x86_64-310.40.run
 #random packages that are useful
 sudo apt-get install mercurial libopenscenegraph-dev cmake-curses-gui -y
 
