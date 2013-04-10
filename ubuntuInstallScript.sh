@@ -12,7 +12,7 @@ sudo apt-get update
 sudo apt-get install ros-fuerte-desktop-full -y
 
 # setup ros fuerte workspace
-sudo apt-get install python-rosinstall python-rosdep -y
+sudo apt-get install python-rosinstall python-rosdep ros-fuerte-rqt -y
 rosws init ~/fuerte_workspace /opt/ros/fuerte
 mkdir ~/fuerte_workspace/sandbox
 rosws set ~/fuerte_workspace/sandbox
